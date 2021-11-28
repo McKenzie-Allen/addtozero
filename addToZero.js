@@ -4,15 +4,22 @@ let array = [28, 43, -12, 30, 4, 0, 12]
 // Write your solution below:
 let i = array.length - 1
 
-while (i >= 0) {
-    for (let countdown = i - 1; countdown >= 0; --countdown) {
-        let y = array[countdown] + array[i]
-        if (y === 0) {
-            let hapa = true
-        } else {
-            let hapa = false
+function willItAdd(i) {
+    while (i >= 0) {
+        for (let countdown = i; countdown >= 0; --countdown) {
+            if (array[i] + array[countdown] === 0) return true
+            if (array[i] + array[countdown] === !0) return false
         }
+        i--
     }
-    i--
 
 }
+switch (willItAdd(i)) {
+    case true:
+        message = "true"
+        break;
+    case false:
+        message = "false"
+        break;
+}
+console.log(message)
