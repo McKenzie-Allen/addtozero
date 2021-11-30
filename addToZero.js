@@ -2,24 +2,16 @@
 let array = [28, 43, -12, 30, 4, 0, 12]
 
 // Write your solution below:
-let i = array.length - 1
 
-function willItAdd(i) {
-    while (i >= 0) {
-        for (let countdown = i; countdown >= 0; --countdown) {
-            if (array[i] + array[countdown] === 0) return true
-            if (array[i] + array[countdown] === !0) return false
+let addZero = "false"
+
+for (let i = array.length - 1; i >= 0; i--) {
+    for (let x = i; x >= 0; x--) {
+        if (i !== x) {
+            if (array[i] + array[x] === 0) {
+                addZero = "true"
+            }
         }
-        i--
     }
-
 }
-switch (willItAdd(i)) {
-    case true:
-        message = "true"
-        break;
-    case false:
-        message = "false"
-        break;
-}
-console.log(message)
+console.log(addZero)
